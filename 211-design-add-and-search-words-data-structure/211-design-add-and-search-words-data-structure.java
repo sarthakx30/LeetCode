@@ -1,6 +1,6 @@
 class WordDictionary {
     
-    Map<Integer, List<String>> map;
+    Map<Integer, Set<String>> map;
     
     public WordDictionary() {
         map = new HashMap<>();
@@ -9,9 +9,9 @@ class WordDictionary {
     public void addWord(String word) {
         int index = word.length();
         if (!map.containsKey(index)) {
-            List<String> list = new ArrayList<>();
-            list.add(word);
-            map.put(index, list);
+            Set<String> set = new HashSet<>();
+            set.add(word);
+            map.put(index, set);
         } else {
             map.get(index).add(word);
         }
@@ -24,8 +24,8 @@ class WordDictionary {
           return false;
       }
 
-      List<String> list = map.get(index);
-      for(String s : list) { 
+      Set<String> set = map.get(index);
+      for(String s : set) { 
           if(isSame(s, word)) { // when word has '.'
               return true;
           }
