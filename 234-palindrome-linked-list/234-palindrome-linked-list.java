@@ -10,15 +10,18 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
+        //Single Node then palindrome
         if(head.next==null){
             return true;
         }
+        //Slow pointer marks the middle of list
         ListNode slow=head;
         ListNode fast=head;
         while(fast!=null && fast.next!=null){
             fast=fast.next.next;
             slow=slow.next;
         }
+        //Reverse the second half of list
         ListNode curr=slow;
         ListNode prev=null;
         while(curr!=null){
@@ -27,6 +30,7 @@ class Solution {
             prev=curr;
             curr=temp;
         }
+        //Compare the two Pointers
         ListNode tHead=head;
         ListNode revHead=prev;
         while(revHead!=null){
