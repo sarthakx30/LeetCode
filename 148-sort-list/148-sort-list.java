@@ -28,7 +28,7 @@ class Solution {
         
         return merge(list1, list2);
     }
-    ListNode merge(ListNode list1, ListNode list2) {
+    private ListNode merge(ListNode list1, ListNode list2) {
         ListNode node = new ListNode(), curr = node;
 
         while (list1 != null && list2 != null) {
