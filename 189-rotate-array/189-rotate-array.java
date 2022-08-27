@@ -13,6 +13,7 @@ class Solution {
         
         //O(n) time complexity
         //O(1) space complexity
+        if(nums.length<2) return;
         k %= nums.length;
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k - 1);
